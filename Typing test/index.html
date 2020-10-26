@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<!-- 
+Created by: Matthew Crowell
+last edited: 10/19/2020
+page purpose: A fun typing test webpage to practice and learn!!!
+-->
+<html lang = "en">
+<head>
+    <title>Click Click Clack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--other css-->
+    <style>
+        .Short-box 
+        {
+            width:3em;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--Title-->
+        <div class="row">
+            <div class="col text-center">Click Click Clack</div>
+        </div>
+        <!--navigation-->
+        <div class="row">
+            <div class="col text-center form-group">
+                WPM: <hold>0</hold> | CPM: <hold id="Clicksec">0</hold> | MISTAKES: <hold id="mistakes-count">0</hold> | TOTAL LETTERS IN SET: <hold id="WordsSetCount">0</hold>
+                <br>
+                How many quotes would you like to generate? <input type="text" id="Generator" class="form-control Short-box">
+            </div>
+        </div>
+        <!--Generation button-->
+        <div class="row">
+            <div class="col text-center">
+                <button onclick="generateWords()">GENERATE NEW TEST</button>
+            </div>
+        </div>
+        <!--words to type-->
+        <div class="row">
+            <div class="col text-center">
+                <div class="generated_text"></div>
+            </div>
+        </div>
+        <!--typing box-->
+        <div class="row">
+            <div class="col">
+                <form onSubmit="return false;">
+                    <input id="text-place" class="form-control" type="text" onkeypress="return myKeyPress(event)">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--jquery, popper, and bootstrap .js links, in that order-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!--Page main js-->
+    <script src="js/index.js"></script>
+</body>
