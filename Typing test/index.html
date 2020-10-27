@@ -18,6 +18,14 @@ page purpose: A fun typing test webpage to practice and learn!!!
             width:3em;
             display:inline-block;
         }
+        body
+        {
+            background-color: lightblue;
+        }
+        .next-letter
+        {
+            font-size: 3em;
+        }
     </style>
 </head>
 <body>
@@ -29,7 +37,7 @@ page purpose: A fun typing test webpage to practice and learn!!!
         <!--navigation-->
         <div class="row">
             <div class="col text-center form-group">
-                WPM: <hold>0</hold> | CPM: <hold id="Clicksec">0</hold> | MISTAKES: <hold id="mistakes-count">0</hold> | TOTAL LETTERS IN SET: <hold id="WordsSetCount">0</hold>
+                WPM: <hold id="Clickmin">0</hold> | CPM: <hold id="Clicksec">0</hold> | MISTAKES: <hold id="mistakes-count">0</hold> | TOTAL LETTERS IN SET: <hold id="WordsSetCount">0</hold>
                 <br>
                 How many quotes would you like to generate? <input type="text" id="Generator" class="form-control Short-box">
             </div>
@@ -44,6 +52,12 @@ page purpose: A fun typing test webpage to practice and learn!!!
         <div class="row">
             <div class="col text-center">
                 <div class="generated_text"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div> Next letter</div>
+                <div id="next-letter"></div>
             </div>
         </div>
         <!--typing box-->

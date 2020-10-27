@@ -16,14 +16,22 @@ function add()
     if(timekeep == true)
     {
         timepoint++
-        clicksecond = clicks/timepoint
-        console.log(clicks);
         if(toType[0].length == 0)
         {
+            var mincalc = timepoint/60;
+            var clicksmin = 4.7/mincalc;
+            clicksecond = clicks/timepoint
             var n = clicksecond.toFixed(2);
+            var r = clicksmin.toFixed(2);
             document.getElementById('Clicksec').innerHTML = n;
+            document.getElementById('Clickmin').innerHTML = r;
+            mincalc, timepoint, clicksmin,clicks,clicksecond, r, n = 0;
+            
+
             
             timekeep = false;
+
+
         }
     }
 }
@@ -62,7 +70,6 @@ function generateWords()
     }
 }
   
-//creates array of characters to type
 
 //Checks what key is clicked
 function myKeyPress(e)
@@ -70,7 +77,7 @@ function myKeyPress(e)
     var keynum;
     if(window.event || e.which) 
     {               
-        //timer;
+        
         keynum = e.keyCode;
         keynum = e.which;
         if(toType[currentQuote][0] != String.fromCharCode(keynum) && keynum != '13' )
@@ -81,6 +88,7 @@ function myKeyPress(e)
         if(toType[currentQuote][0] == String.fromCharCode(keynum))
         {
             toType[currentQuote].shift();
+            document.getElementById('next-letter').innerHTML = toType[currentQuote][0];
             timekeep = true;
             clicks++;
         }
